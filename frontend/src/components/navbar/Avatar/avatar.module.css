@@ -1,0 +1,14 @@
+.imageContainer {
+    width: 15vw;
+    height: 15vw;
+    border-radius: calc(15vw / 2);
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 95%;
+    height: 95%;
+}
