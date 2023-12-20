@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { IoLogoPython } from "react-icons/io";
@@ -43,23 +43,20 @@ export default function Skills() {
         Skill[]
     >([]);
 
-    let indexAnimatedRef = useRef<number>(0);
-
-    console.log(skillsActuallyRendered);
+    let index = 0;
 
     useEffect(() => {
         let interval: NodeJS.Timeout | null = null;
         if (inView) {
             interval = setInterval(() => {
-                console.log(indexAnimatedRef.current);
                 setSkillsActuallyRendered((skillsActuallyRendered) => [
                     ...skillsActuallyRendered,
-                    skillsToBeRendered[indexAnimatedRef.current],
+                    skillsToBeRendered[index],
                 ]);
-                indexAnimatedRef.current += 1;
-                if (indexAnimatedRef.current === skillsToBeRendered.length) {
+                index += 1;
+                if (index === skillsToBeRendered.length) {
                     clearInterval(interval as NodeJS.Timeout);
-                    indexAnimatedRef.current = 0;
+                    index = 0;
                 }
             }, 1000);
         } else {
