@@ -8,6 +8,7 @@ export default function Navbar() {
     return (
         <div className={styles.container}>
             <Avatar />
+            <Link href="#about-me">About Me</Link>
             <Link href="#skills">Skills</Link>
             <Link href="#projects">Projects</Link>
         </div>

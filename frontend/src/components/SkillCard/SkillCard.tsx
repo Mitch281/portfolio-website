@@ -7,10 +7,10 @@ type Props = {
 
 export default function SkillCard({ image, imageDescription }: Props) {
     return (
-        <div className={styles.container}>
+        <>
             {image}
             <hr className={styles.hr} />
             <span>{imageDescription}</span>
-        </div>
+        </>
     );
 }
