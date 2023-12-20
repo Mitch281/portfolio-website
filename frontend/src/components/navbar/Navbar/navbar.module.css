@@ -5,5 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    flex-basis: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    gap: 1rem;
 }

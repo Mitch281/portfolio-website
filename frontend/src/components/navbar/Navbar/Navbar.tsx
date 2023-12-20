@@ -11,6 +11,7 @@ export default function Navbar() {
             <Link href="#about-me">About Me</Link>
             <Link href="#skills">Skills</Link>
             <Link href="#projects">Projects</Link>
+            <Link href="blog">Blog</Link>
         </div>
     );
 }
