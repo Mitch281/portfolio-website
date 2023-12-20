@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { IoLogoPython } from "react-icons/io";
@@ -9,131 +9,78 @@ import { useInView } from "react-intersection-observer";
 import SkillCard from "../SkillCard/SkillCard";
 import styles from "./skills.module.css";
 
-type Action = {
-    type: "HIDE" | "SHOW";
-    payload: {
-        cardNumber: number;
-    };
+type Skill = {
+    imageComponent: JSX.Element;
+    imageDescription: string;
 };
-
-function skillCardsAnimationReducer(state: string[], action: Action): string[] {
-    const skillCardIndex = action.payload.cardNumber - 1;
-    switch (action.type) {
-        case "HIDE":
-            return state.map((extraClass, index) => {
-                if (skillCardIndex === index) {
-                    return styles.displayNone;
-                }
-                return "";
-            });
-        case "SHOW":
-            return state.map((extraClass, index) => {
-                if (skillCardIndex === index) {
-                    return "";
-                }
-                return styles.displayNone;
-            });
-    }
-}
 
 export default function Skills() {
     const { ref, inView } = useInView();
-    const initialState: string[] = [
-        styles.displayNone,
-        styles.displayNone,
-        styles.displayNone,
-        styles.displayNone,
-        styles.displayNone,
+
+    const skillsToBeRendered: Skill[] = [
+        {
+            imageComponent: <FaReact className={styles.image} />,
+            imageDescription: "React",
+        },
+        {
+            imageComponent: <BiLogoJavascript className={styles.image} />,
+            imageDescription: "JavaScript",
+        },
+        {
+            imageComponent: <BiLogoTypescript className={styles.image} />,
+            imageDescription: "TypeScript",
+        },
+        {
+            imageComponent: <IoLogoPython className={styles.image} />,
+            imageDescription: "Python",
+        },
+        {
+            imageComponent: <SiDjango className={styles.image} />,
+            imageDescription: "Django",
+        },
     ];
-    const [skillCardAnimationState, dispatch] = useReducer(
-        skillCardsAnimationReducer,
-        initialState
-    );
+    const [skillsActuallyRendered, setSkillsActuallyRendered] = useState<
+        Skill[]
+    >([]);
 
     let indexAnimatedRef = useRef<number>(0);
 
+    console.log(skillsActuallyRendered);
+
     useEffect(() => {
-        console.log("made it");
-        console.log(inView);
         let interval: NodeJS.Timeout | null = null;
-        console.log(indexAnimatedRef.current);
         if (inView) {
-            indexAnimatedRef.current = 0;
             interval = setInterval(() => {
-                dispatch({
-                    type: "SHOW",
-                    payload: { cardNumber: indexAnimatedRef.current + 1 },
-                });
+                console.log(indexAnimatedRef.current);
+                setSkillsActuallyRendered((skillsActuallyRendered) => [
+                    ...skillsActuallyRendered,
+                    skillsToBeRendered[indexAnimatedRef.current],
+                ]);
                 indexAnimatedRef.current += 1;
-                if (indexAnimatedRef.current === initialState.length) {
+                if (indexAnimatedRef.current === skillsToBeRendered.length) {
                     clearInterval(interval as NodeJS.Timeout);
+                    indexAnimatedRef.current = 0;
                 }
             }, 1000);
         } else {
-            indexAnimatedRef.current = 0;
-            interval = setInterval(() => {
-                dispatch({
-                    type: "HIDE",
-                    payload: { cardNumber: indexAnimatedRef.current + 1 },
-                });
-                if (indexAnimatedRef.current === initialState.length) {
-                    clearInterval(interval as NodeJS.Timeout);
-                }
-                indexAnimatedRef.current += 1;
-            }, 1000);
+            setSkillsActuallyRendered([]);
         }
-
-        return () => {
-            if (interval) {
-                clearInterval(interval);
-            }
-        };
     }, [inView]);
 
+    const skillCards = skillsActuallyRendered.map((skill, index) => (
+        <div key={index} className={styles.skillCardContainer}>
+            <SkillCard
+                image={skill.imageComponent}
+                imageDescription={skill.imageDescription}
+            />
+        </div>
+    ));
+
     return (
-        <div id="skills" className={styles.container} ref={ref}>
+        <div id="skills" className={styles.container}>
             <h2>My main skills are</h2>
-            <div
-                className={`${styles.skillCardsContainer} ${skillCardAnimationState[0]}`}
-            >
-                <div className={styles.skillCardContainer}>
-                    <SkillCard
-                        image={<FaReact className={styles.image} />}
-                        imageDescription="React"
-                    />
-                </div>
-                <div
-                    className={`${styles.skillCardsContainer} ${skillCardAnimationState[1]}`}
-                >
-                    <SkillCard
-                        image={<BiLogoJavascript className={styles.image} />}
-                        imageDescription="JavaScript"
-                    />
-                </div>
-                <div
-                    className={`${styles.skillCardsContainer} ${skillCardAnimationState[2]}`}
-                >
-                    <SkillCard
-                        image={<BiLogoTypescript className={styles.image} />}
-                        imageDescription="TypeScript"
-                    />
-                </div>
-                <div
-                    className={`${styles.skillCardsContainer} ${skillCardAnimationState[3]}`}
-                >
-                    <SkillCard
-                        image={<IoLogoPython className={styles.image} />}
-                        imageDescription="Python"
-                    />
-                </div>
-                <div
-                    className={`${styles.skillCardsContainer} ${skillCardAnimationState[4]}`}
-                >
-                    <SkillCard
-                        image={<SiDjango className={styles.image} />}
-                        imageDescription="Django"
-                    />
-                </div>
+            <div className={styles.skillCardsContainer} ref={ref}>
+                {skillCards}
             </div>
         </div>
     );
