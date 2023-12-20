@@ -1,6 +1,16 @@
 .main {
   min-height: 100vh;
   display: flex;
+  overflow: hidden;
+}
+
+.pages {
+  overflow-y: scroll;
+  /* Make it take up rest of page. */
+  flex-grow: 1;
+
+  /* So that overflow-y works. */
+  height: 100vh;
 }
 
 .page {

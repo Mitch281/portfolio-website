@@ -12,6 +12,7 @@ import styles from "./skills.module.css";
 type Skill = {
     imageComponent: JSX.Element;
     imageDescription: string;
+    isVisible: boolean;
 };
 
 export default function Skills() {
@@ -21,27 +22,58 @@ export default function Skills() {
         {
             imageComponent: <FaReact className={styles.image} />,
             imageDescription: "React",
+            isVisible: false,
         },
         {
             imageComponent: <BiLogoJavascript className={styles.image} />,
             imageDescription: "JavaScript",
+            isVisible: false,
         },
         {
             imageComponent: <BiLogoTypescript className={styles.image} />,
             imageDescription: "TypeScript",
+            isVisible: false,
         },
         {
             imageComponent: <IoLogoPython className={styles.image} />,
             imageDescription: "Python",
+            isVisible: false,
         },
         {
             imageComponent: <SiDjango className={styles.image} />,
             imageDescription: "Django",
+            isVisible: false,
         },
     ];
     const [skillsActuallyRendered, setSkillsActuallyRendered] = useState<
         Skill[]
-    >([]);
+    >([
+        {
+            imageComponent: <></>,
+            imageDescription: "",
+            isVisible: false,
+        },
+        {
+            imageComponent: <></>,
+            imageDescription: "",
+            isVisible: false,
+        },
+        {
+            imageComponent: <></>,
+            imageDescription: "",
+            isVisible: false,
+        },
+        {
+            imageComponent: <></>,
+            imageDescription: "",
+            isVisible: false,
+        },
+        {
+            imageComponent: <></>,
+            imageDescription: "",
+            isVisible: false,
+        },
+    ]);
 
     let index = 0;
 
