@@ -48,6 +48,7 @@ export default function Skills() {
     useEffect(() => {
         let interval: NodeJS.Timeout | null = null;
         if (inView) {
+            console.log("interval created");
             interval = setInterval(() => {
                 setSkillsActuallyRendered((skillsActuallyRendered) => [
                     ...skillsActuallyRendered,
@@ -55,6 +56,7 @@ export default function Skills() {
                 ]);
                 index += 1;
                 if (index === skillsToBeRendered.length) {
+                    console.log("interval cleared because reached end.");
                     clearInterval(interval as NodeJS.Timeout);
                     index = 0;
                 }
@@ -62,6 +64,13 @@ export default function Skills() {
         } else {
             setSkillsActuallyRendered([]);
         }
+
+        return () => {
+            if (interval) {
+                console.log("interval cleared in cleanup function");
+                clearInterval(interval);
+            }
+        };
     }, [inView]);
 
     const skillCards = skillsActuallyRendered.map((skill, index) => (
