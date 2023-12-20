@@ -16,3 +16,8 @@
 .page {
   min-height: 100vh;
 }
+
+.aboutMePage {
+  display: flex;
+  align-items: center;
+}

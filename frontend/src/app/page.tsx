@@ -9,7 +9,7 @@ export default function Home() {
         <main className={styles.main}>
             <Navbar />
             <div className={styles.pages}>
-                <div className={styles.page}>
+                <div className={`${styles.page} ${styles.aboutMePage}`}>
                     <AboutMe />
                 </div>
                 <div className={styles.page}>
