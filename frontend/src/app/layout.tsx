@@ -1,3 +1,4 @@
+import { NavbarContextProvider } from "@/context/NavbarContext";
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import "./globals.css";
@@ -21,7 +22,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={firaSans.className}>{children}</body>
+            <body className={firaSans.className}>
+                <NavbarContextProvider>{children}</NavbarContextProvider>
+            </body>
         </html>
     );
 }
