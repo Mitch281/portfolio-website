@@ -7,8 +7,7 @@ import Avatar from "../Avatar/Avatar";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
-    const { linkInFocusOnNavbar, setLinkInFocusOnNavbar } =
-        useContext(NavbarContext);
+    const { linkInFocusOnNavbar } = useContext(NavbarContext);
 
     return (
         <div className={styles.container}>

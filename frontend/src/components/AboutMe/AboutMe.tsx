@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
 import styles from "./about-me.module.css";
 
 export default function AboutMe() {
+    const { ref, inView } = useSetNavbarLinkInFocus("About Me");
     return (
-        <div id="about-me" className={styles.container}>
+        <div id="about-me" className={styles.container} ref={ref}>
             <h1>
                 <span>Mitchell</span>{" "}
                 <span className={styles.lastName}>Anton</span>

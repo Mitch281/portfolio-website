@@ -1,11 +1,11 @@
 "use client";
 
+import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
 import { useEffect, useState } from "react";
 import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { IoLogoPython } from "react-icons/io";
 import { SiDjango } from "react-icons/si";
-import { useInView } from "react-intersection-observer";
 import SkillCard from "../SkillCard/SkillCard";
 import styles from "./skills.module.css";
 
@@ -16,7 +16,7 @@ type Skill = {
 };
 
 export default function Skills() {
-    const { ref, inView } = useInView();
+    const { ref, inView } = useSetNavbarLinkInFocus("Skills");
 
     const skillsToBeRendered: Skill[] = [
         {
