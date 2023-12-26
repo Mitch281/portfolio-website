@@ -9,7 +9,9 @@
 }
 
 .image {
+    /* For some reason, we need this? */
     aspect-ratio: 1;
+
     width: 100%;
     height: 100%;
     border-radius: calc((0.8 * var(--navbar-width)) / 2);

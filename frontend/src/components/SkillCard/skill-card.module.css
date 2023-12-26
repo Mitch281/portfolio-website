@@ -1,0 +1,10 @@
+.imageContainer {
+    position: relative;
+    width: 75%;
+    height: 75%;
+}
+
+.imageDescription {
+    position: absolute;
+
+}

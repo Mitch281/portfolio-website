@@ -1,49 +1,80 @@
 "use client";
 
 import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
-import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { IoLogoPython } from "react-icons/io";
-import { SiDjango } from "react-icons/si";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import SkillCard from "../SkillCard/SkillCard";
 import styles from "./skills.module.css";
 
 type Skill = {
     imageComponent: JSX.Element;
     imageDescription: string;
-    isVisible: boolean;
 };
 
 const SKILLS: Skill[] = [
     {
-        imageComponent: <FaReact className={styles.image} />,
+        imageComponent: (
+            <Image
+                className={styles.image}
+                src="/react-icon.svg"
+                alt="React Icon"
+                fill
+            />
+        ),
         imageDescription: "React",
-        isVisible: false,
     },
     {
-        imageComponent: <BiLogoJavascript className={styles.image} />,
+        imageComponent: (
+            <Image
+                className={styles.image}
+                src="/javascript-logo.png"
+                alt="JavaScript Logo"
+                fill
+            />
+        ),
         imageDescription: "JavaScript",
-        isVisible: false,
     },
     {
-        imageComponent: <BiLogoTypescript className={styles.image} />,
+        imageComponent: (
+            <Image
+                className={styles.image}
+                src="/typescript-logo.svg"
+                alt="TypeScript Logo"
+                fill
+            />
+        ),
         imageDescription: "TypeScript",
-        isVisible: false,
     },
     {
-        imageComponent: <IoLogoPython className={styles.image} />,
+        imageComponent: (
+            <Image
+                className={styles.image}
+                src="/python-logo.svg"
+                alt="Python Logo"
+                fill
+            />
+        ),
         imageDescription: "Python",
-        isVisible: false,
     },
     {
-        imageComponent: <SiDjango className={styles.image} />,
+        imageComponent: (
+            <Image
+                className={styles.image}
+                src="/django-logo.svg"
+                alt="Django Logo"
+                fill
+            />
+        ),
         imageDescription: "Django",
-        isVisible: false,
     },
 ];
 
 export default function Skills() {
-    const { ref } = useSetNavbarLinkInFocus("Skills");
+    const { ref, inView } = useSetNavbarLinkInFocus("Skills");
+    const [skillCardsContainerClasses, setSkillCardsContainerClasses] =
+        useState(styles.skillCardsContainer);
+
+    // console.log(skillCardsContainerClasses);
 
     const skillCards = SKILLS.map((skill, index) => (
         <div key={index} className={styles.skillCardContainer}>
@@ -51,13 +82,26 @@ export default function Skills() {
                 image={skill.imageComponent}
                 imageDescription={skill.imageDescription}
             />
+            <span className={styles.imageDescription}>
+                {skill.imageDescription}
+            </span>
         </div>
     ));
+
+    useEffect(() => {
+        if (inView) {
+            setSkillCardsContainerClasses(`${styles.skillCardsContainer}`);
+        } else {
+            setSkillCardsContainerClasses(
+                `${styles.skillCardsContainer} ${styles.displayNone}`
+            );
+        }
+    }, [inView]);
 
     return (
         <div id="skills" className={styles.container} ref={ref}>
             <h1>My main skills are</h1>
-            <div className={styles.skillCardsContainer}>{skillCards}</div>
+            <div className={skillCardsContainerClasses}>{skillCards}</div>
             <h2>Other Skills</h2>
             <div className={styles.otherSkillsContainer}>
                 <h3>Languages and Frameworks</h3>
