@@ -14,12 +14,19 @@
     display: flex;
     margin-top: 2rem;
     padding-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .gifContainer {
-    flex-basis: 70%;
-    aspect-ratio: 880 / 640;
+    width: 500px;
     position: relative;
-    flex-wrap: wrap;
+    margin-left: 2rem;
+}
 
+.conwaysGameOfLifeGifContainer {
+    aspect-ratio: 880 / 640;
+}
+
+.sudokuGifContainer {
+    aspect-ratio: 1 / 1;
 }

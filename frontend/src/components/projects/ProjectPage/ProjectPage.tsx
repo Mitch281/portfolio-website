@@ -50,7 +50,9 @@ export default function ProjectPage() {
                         ]}
                         githubLink="https://github.com/Mitch281/Conways-Game-of-Life"
                     />
-                    <div className={styles.gifContainer}>
+                    <div
+                        className={`${styles.gifContainer} ${styles.conwaysGameOfLifeGifContainer}`}
+                    >
                         <Image
                             src="/conways-game-of-life.gif"
                             alt="Conways Game of Life Demo"
@@ -69,12 +71,10 @@ export default function ProjectPage() {
                         ]}
                         githubLink="https://github.com/Mitch281/Sudoku-Recreation"
                     />
-                    <div className={styles.gifContainer}>
-                        <Image
-                            src="/conways-game-of-life.gif"
-                            alt="Conways Game of Life Demo"
-                            fill
-                        />
+                    <div
+                        className={`${styles.gifContainer} ${styles.sudokuGifContainer}`}
+                    >
+                        <Image src="/sudoku.gif" alt="Sudoku Demo" fill />
                     </div>
                 </div>
             </div>
