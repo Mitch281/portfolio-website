@@ -8,7 +8,7 @@ import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
 import styles from "./about-me.module.css";
 
 export default function AboutMe() {
-    const { ref, inView } = useSetNavbarLinkInFocus("About Me");
+    const { ref } = useSetNavbarLinkInFocus("About Me");
     return (
         <div id="about-me" className={styles.container} ref={ref}>
             <h1>
