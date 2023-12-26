@@ -29,6 +29,11 @@
     animation: fadeIn 2s;
 }
 
+.otherSkillsContainer {
+    width: 95%;
+    margin-left: 2rem;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
