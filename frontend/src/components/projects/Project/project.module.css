@@ -1,3 +1,7 @@
+.container {
+    padding-bottom: 2rem;
+}
+
 .container:not(:first-child) {
     margin-top: 2rem;
 }

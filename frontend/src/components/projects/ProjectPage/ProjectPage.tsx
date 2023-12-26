@@ -1,6 +1,7 @@
 "use client";
 
 import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
+import Image from "next/image";
 import Project from "../Project/Project";
 import styles from "./project-page.module.css";
 
@@ -36,28 +37,46 @@ export default function ProjectPage() {
                     githubLink="https://github.com/Mitch281/django-react-reddit-clone"
                     websiteLink="threddit.netlify.app"
                 />
-                <Project
-                    projectName="Conway's Game of Life"
-                    technologies={["Python", "Pygame"]}
-                    skills={["Algorithms", "OOP"]}
-                    dotpoints={[
-                        "Cloned the famous game, Conway's Game of Life with Python and Pygame.",
-                        "Controls to start and stop the game.",
-                        "Controls to go back or go forwards one step at a time.",
-                        "Drawing mode (by pressing ctrl) where you can draw tiles.",
-                    ]}
-                    githubLink="https://github.com/Mitch281/Conways-Game-of-Life"
-                />
-                <Project
-                    projectName="Sudoku Solver"
-                    technologies={["Python", "Pygame"]}
-                    skills={["Backtracking Algorithm", "OOP"]}
-                    dotpoints={[
-                        "Built a Sudoku Clone with a Sudoku solver using the backtracking algorithm.",
-                        "Written using python with the Pygame library.",
-                    ]}
-                    githubLink="https://github.com/Mitch281/Sudoku-Recreation"
-                />
+                <div className={styles.projectContainerWithDemo}>
+                    <Project
+                        projectName="Conway's Game of Life"
+                        technologies={["Python", "Pygame"]}
+                        skills={["Algorithms", "OOP"]}
+                        dotpoints={[
+                            "Cloned the famous game, Conway's Game of Life with Python and Pygame.",
+                            "Controls to start and stop the game.",
+                            "Controls to go back or go forwards one step at a time.",
+                            "Drawing mode (by pressing ctrl) where you can draw tiles.",
+                        ]}
+                        githubLink="https://github.com/Mitch281/Conways-Game-of-Life"
+                    />
+                    <div className={styles.gifContainer}>
+                        <Image
+                            src="/conways-game-of-life.gif"
+                            alt="Conways Game of Life Demo"
+                            fill
+                        />
+                    </div>
+                </div>
+                <div className={styles.projectContainerWithDemo}>
+                    <Project
+                        projectName="Sudoku Solver"
+                        technologies={["Python", "Pygame"]}
+                        skills={["Backtracking Algorithm", "OOP"]}
+                        dotpoints={[
+                            "Built a Sudoku Clone with a Sudoku solver using the backtracking algorithm.",
+                            "Written using python with the Pygame library.",
+                        ]}
+                        githubLink="https://github.com/Mitch281/Sudoku-Recreation"
+                    />
+                    <div className={styles.gifContainer}>
+                        <Image
+                            src="/conways-game-of-life.gif"
+                            alt="Conways Game of Life Demo"
+                            fill
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

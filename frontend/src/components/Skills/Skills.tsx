@@ -115,7 +115,6 @@ export default function Skills() {
                 </h3>
                 <ul>
                     <li>Next</li>
-                    <li>Redux</li>
                     <li>Java</li>
                     <li>PHP</li>
                     <li>SQL</li>

@@ -9,3 +9,17 @@
     width: 95%;
     margin-left: 2rem;
 }
+
+.projectContainerWithDemo {
+    display: flex;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.gifContainer {
+    flex-basis: 70%;
+    aspect-ratio: 880 / 640;
+    position: relative;
+    flex-wrap: wrap;
+
+}
