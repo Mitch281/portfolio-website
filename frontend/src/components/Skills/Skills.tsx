@@ -38,7 +38,7 @@ const SKILLS: Skill[] = [
         imageComponent: (
             <Image
                 className={styles.image}
-                src="/javascript-logo.png"
+                src="/javascript-logo.svg"
                 alt="JavaScript Logo"
                 fill
             />
