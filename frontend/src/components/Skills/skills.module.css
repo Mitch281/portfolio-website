@@ -29,8 +29,8 @@
     justify-content: center;
     background: white;
     border-radius: 1rem;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     padding: 1rem 0;
 }
 
@@ -46,6 +46,10 @@
 .otherSkillsContainer {
     width: 95%;
     margin-left: 2rem;
+}
+
+.otherSkillsHeader:not(:first-child) {
+    margin-top: 1rem;
 }
 
 @keyframes fadeIn {

@@ -27,6 +27,17 @@ const SKILLS: Skill[] = [
         imageComponent: (
             <Image
                 className={styles.image}
+                src="/redux-logo.svg"
+                alt="Redux Logo"
+                fill
+            />
+        ),
+        imageDescription: "Redux",
+    },
+    {
+        imageComponent: (
+            <Image
+                className={styles.image}
                 src="/javascript-logo.png"
                 alt="JavaScript Logo"
                 fill
@@ -74,14 +85,9 @@ export default function Skills() {
     const [skillCardsContainerClasses, setSkillCardsContainerClasses] =
         useState(styles.skillCardsContainer);
 
-    // console.log(skillCardsContainerClasses);
-
     const skillCards = SKILLS.map((skill, index) => (
         <div key={index} className={styles.skillCardContainer}>
-            <SkillCard
-                image={skill.imageComponent}
-                imageDescription={skill.imageDescription}
-            />
+            <SkillCard image={skill.imageComponent} />
             <span className={styles.imageDescription}>
                 {skill.imageDescription}
             </span>
@@ -104,7 +110,9 @@ export default function Skills() {
             <div className={skillCardsContainerClasses}>{skillCards}</div>
             <h2>Other Skills</h2>
             <div className={styles.otherSkillsContainer}>
-                <h3>Languages and Frameworks</h3>
+                <h3 className={styles.otherSkillsHeader}>
+                    Languages and Frameworks
+                </h3>
                 <ul>
                     <li>Next</li>
                     <li>Redux</li>
@@ -113,14 +121,16 @@ export default function Skills() {
                     <li>SQL</li>
                     <li>Material UI</li>
                 </ul>
-                <h3>Cloud Providers</h3>
+                <h3 className={styles.otherSkillsHeader}>Cloud Providers</h3>
                 <ul>
                     <li>
                         AWS - Lambda, EC2, RDS, S3, CloudWatch, IAM, API
                         Gateways
                     </li>
                 </ul>
-                <h3>Other Tools and Concepts</h3>
+                <h3 className={styles.otherSkillsHeader}>
+                    Other Tools and Concepts
+                </h3>
                 <ul>
                     <li>CI/CD</li>
                     <li>Github Actions</li>
