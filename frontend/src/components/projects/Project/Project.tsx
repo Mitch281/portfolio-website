@@ -27,8 +27,9 @@ export default function Project({
     if (websiteLink) {
         websiteLinkElement = (
             <Link
-                href={websiteLink as string}
+                href={websiteLink}
                 className={styles.socialMediaIconLink}
+                replace
             >
                 <PiLinkBold className={styles.socialMediaIcon} />
             </Link>
@@ -46,7 +47,11 @@ export default function Project({
                 ))}
             </ul>
             <div className={styles.linksContainer}>
-                <Link href={githubLink} className={styles.socialMediaIconLink}>
+                <Link
+                    href={githubLink}
+                    className={styles.socialMediaIconLink}
+                    replace
+                >
                     <FaGithub className={styles.socialMediaIcon} />
                 </Link>
                 {websiteLinkElement}
