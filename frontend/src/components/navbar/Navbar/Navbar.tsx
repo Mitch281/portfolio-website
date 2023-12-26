@@ -7,7 +7,8 @@ import Avatar from "../Avatar/Avatar";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
-    const { linkInFocusOnNavbar } = useContext(NavbarContext);
+    const { pageHighlightedOnNavbar } = useContext(NavbarContext);
+    console.log(pageHighlightedOnNavbar);
 
     return (
         <div className={styles.container}>
@@ -15,7 +16,9 @@ export default function Navbar() {
             <Link
                 href="#about-me"
                 className={
-                    linkInFocusOnNavbar === "About Me" ? styles.inFocusLink : ""
+                    pageHighlightedOnNavbar === "About Me"
+                        ? styles.inFocusLink
+                        : ""
                 }
             >
                 About Me
@@ -23,7 +26,9 @@ export default function Navbar() {
             <Link
                 href="#skills"
                 className={
-                    linkInFocusOnNavbar === "Skills" ? styles.inFocusLink : ""
+                    pageHighlightedOnNavbar === "Skills"
+                        ? styles.inFocusLink
+                        : ""
                 }
             >
                 Skills
@@ -31,7 +36,9 @@ export default function Navbar() {
             <Link
                 href="#projects"
                 className={
-                    linkInFocusOnNavbar === "Projects" ? styles.inFocusLink : ""
+                    pageHighlightedOnNavbar === "Projects"
+                        ? styles.inFocusLink
+                        : ""
                 }
             >
                 Projects
