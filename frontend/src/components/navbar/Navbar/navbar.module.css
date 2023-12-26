@@ -1,14 +1,14 @@
 .container {
     height: 100vh;
-    background: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-basis: 200px;
+    flex-basis: var(--navbar-width);
     flex-grow: 0;
     flex-shrink: 0;
     gap: 1rem;
+    background: #566246;
 }
 
 .inFocusLink {
