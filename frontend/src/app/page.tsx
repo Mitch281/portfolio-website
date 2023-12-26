@@ -1,7 +1,7 @@
 import AboutMe from "@/components/AboutMe/AboutMe";
-import Projects from "@/components/Projects/Projects";
 import Skills from "@/components/Skills/Skills";
 import Navbar from "@/components/navbar/Navbar/Navbar";
+import ProjectPage from "@/components/projects/ProjectPage/ProjectPage";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
                     <Skills />
                 </div>
                 <div className={styles.page}>
-                    <Projects />
+                    <ProjectPage />
                 </div>
             </div>
         </main>

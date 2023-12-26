@@ -56,7 +56,7 @@ export default function Skills() {
 
     return (
         <div id="skills" className={styles.container}>
-            <h2>My main skills are</h2>
+            <h1>My main skills are</h1>
             <div className={styles.skillCardsContainer} ref={ref}>
                 {skillCards}
             </div>
