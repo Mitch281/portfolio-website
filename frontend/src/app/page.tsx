@@ -1,7 +1,7 @@
 import AboutMe from "@/components/AboutMe/AboutMe";
-import Skills from "@/components/Skills/Skills";
 import Navbar from "@/components/navbar/Navbar/Navbar";
-import ProjectPage from "@/components/projects/ProjectPage/ProjectPage";
+import ProjectPage from "@/components/project-page/ProjectPage/ProjectPage";
+import Skills from "@/components/skill-page/Skills/Skills";
 import styles from "./page.module.css";
 
 export default function Home() {
