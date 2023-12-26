@@ -8,7 +8,6 @@ import styles from "./navbar.module.css";
 
 export default function Navbar() {
     const { pageHighlightedOnNavbar } = useContext(NavbarContext);
-    console.log(pageHighlightedOnNavbar);
 
     return (
         <div className={styles.container}>
