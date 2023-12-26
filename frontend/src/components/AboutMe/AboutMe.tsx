@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
@@ -31,6 +32,12 @@ export default function AboutMe() {
                     className={styles.socialMediaIconLink}
                 >
                     <FaGithub className={styles.socialMediaIcon} />
+                </Link>
+                <Link
+                    href="mailto:mitchella0100@gmail.com"
+                    className={styles.socialMediaIconLink}
+                >
+                    <AiOutlineMail className={styles.socialMediaIcon} />
                 </Link>
             </div>
         </div>
