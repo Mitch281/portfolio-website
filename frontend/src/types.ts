@@ -1,6 +1,6 @@
 import { SetStateAction } from "react";
 
-export type NavbarLink = "About Me" | "Skills" | "Projects";
+export type NavbarLink = "About Me" | "Skills" | "Projects" | "Blog";
 
 export type NavbarContextType = {
     pagesInView: NavbarLink[];

@@ -1,6 +1,7 @@
 "use client";
 
 import { NavbarContextType, NavbarLink } from "@/types";
+import { usePathname } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 
 const NavbarContext = createContext<NavbarContextType>({
@@ -13,6 +14,7 @@ const NAVBAR_ORDERING = {
     "About Me": 1,
     Skills: 2,
     Projects: 3,
+    Blog: 4,
 };
 
 function NavbarContextProvider({ children }: { children: React.ReactNode }) {
@@ -20,7 +22,19 @@ function NavbarContextProvider({ children }: { children: React.ReactNode }) {
     const [pageHighlightedOnNavbar, setPageHighlightedOnNavbar] =
         useState<NavbarLink>("About Me");
 
+    const pathname = usePathname();
     useEffect(() => {
+        if (pathname.includes("blog")) {
+            setPageHighlightedOnNavbar("Blog");
+        }
+    }, [pathname]);
+
+    useEffect(() => {
+        // If we are on the blog page, then we disrecard all logic pertaining to highlighting the link on the navbar.
+        if (pathname.includes("blog")) {
+            return;
+        }
+
         let currentOrder: number | null = null;
         let newPageHighlightedOnNavbar: NavbarLink | null = null;
         pagesInView.forEach((pageInView) => {
