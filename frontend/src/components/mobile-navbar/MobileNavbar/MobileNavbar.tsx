@@ -24,7 +24,7 @@ export default function MobileNavbar() {
             <MobileNavbarHeader isOpen={isOpen} triggerNavbar={triggerNavbar} />
             <nav className={navbarClasses}>
                 <Link
-                    href="#about-me"
+                    href="/#about-me"
                     className={
                         pageHighlightedOnNavbar === "About Me"
                             ? styles.inFocusLink
@@ -34,7 +34,7 @@ export default function MobileNavbar() {
                     About Me
                 </Link>
                 <Link
-                    href="#skills"
+                    href="/#skills"
                     className={
                         pageHighlightedOnNavbar === "Skills"
                             ? styles.inFocusLink
@@ -44,7 +44,7 @@ export default function MobileNavbar() {
                     Skills
                 </Link>
                 <Link
-                    href="#projects"
+                    href="/#projects"
                     className={
                         pageHighlightedOnNavbar === "Projects"
                             ? styles.inFocusLink

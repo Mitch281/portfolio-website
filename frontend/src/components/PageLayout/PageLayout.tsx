@@ -1,33 +1,15 @@
-"use client";
-
-import useHandleWindowResize from "@/hooks/useHandleWindowResize";
-import { TABLET_BREAKPOINT } from "@/utils/constants";
-import MobileNavbar from "../mobile-navbar/MobileNavbar/MobileNavbar";
-import Navbar from "../navbar/Navbar/Navbar";
 import styles from "./page-layout.module.css";
 
-export default function PageLayout({
-    children,
-}: {
+type Props = {
     children: React.ReactNode;
-}) {
-    const windowWidth = useHandleWindowResize();
-    let navbarElement = <></>;
+    extraClasses?: string[];
+};
 
-    if (!windowWidth) {
-        return <></>;
+export default function PageLayout({ children, extraClasses }: Props) {
+    let classes = styles.page;
+    if (extraClasses) {
+        const extraClassesString = extraClasses.join(", ");
+        classes += ` ${extraClassesString}`;
     }
-
-    if (windowWidth <= TABLET_BREAKPOINT) {
-        navbarElement = <MobileNavbar />;
-    } else {
-        navbarElement = <Navbar />;
-    }
-
-    return (
-        <main className={styles.main}>
-            {navbarElement}
-            <div className={styles.pages}>{children}</div>
-        </main>
-    );
+    return <div className={classes}>{children}</div>;
 }

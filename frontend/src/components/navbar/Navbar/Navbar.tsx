@@ -31,7 +31,7 @@ export default function Navbar() {
             />
             <Avatar />
             <Link
-                href="#about-me"
+                href="/#about-me"
                 className={
                     pageHighlightedOnNavbar === "About Me"
                         ? styles.inFocusLink
@@ -41,7 +41,7 @@ export default function Navbar() {
                 About Me
             </Link>
             <Link
-                href="#skills"
+                href="/#skills"
                 className={
                     pageHighlightedOnNavbar === "Skills"
                         ? styles.inFocusLink
@@ -51,7 +51,7 @@ export default function Navbar() {
                 Skills
             </Link>
             <Link
-                href="#projects"
+                href="/#projects"
                 className={
                     pageHighlightedOnNavbar === "Projects"
                         ? styles.inFocusLink

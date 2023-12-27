@@ -1,20 +1,8 @@
-.main {
+.page {
     min-height: 100vh;
-    display: flex;
-    overflow: hidden;
-}
-
-@media (max-width: var(--tablet-breakpoint)) {
-    .main {
-        display: initial;
-    }
-}
-
-.pages {
-    overflow-y: scroll;
-    /* Make it take up rest of page. */
-    flex-grow: 1;
-
-    /* So that overflow-y works. */
-    height: 100vh;
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    padding: 0 2rem;
 }
