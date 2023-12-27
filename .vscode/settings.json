@@ -4,4 +4,7 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
 }
