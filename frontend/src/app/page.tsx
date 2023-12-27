@@ -13,6 +13,10 @@ export default function Home() {
     const windowWidth = useHandleWindowResize();
     let navbarElement = <></>;
 
+    if (!windowWidth) {
+        return <></>;
+    }
+
     if (windowWidth <= TABLET_BREAKPOINT) {
         navbarElement = <MobileNavbar />;
     } else {
