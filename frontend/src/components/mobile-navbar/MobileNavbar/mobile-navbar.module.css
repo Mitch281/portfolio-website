@@ -12,13 +12,22 @@
 .navbarContainer {
     width: 100vw;
     background-color: var(--navbar-colour);
-    top: var(--navbar-header-height);
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
     padding-bottom: 1rem;
     gap: 1rem;
     z-index: 10;
+    transition: max-height 0.5s;
+    max-height: 200px;
+}
+
+.dontShow {
+    display: block;
+    line-height: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
 }
 
 .inFocusLink {

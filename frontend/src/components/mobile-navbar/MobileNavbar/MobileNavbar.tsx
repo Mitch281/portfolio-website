@@ -14,10 +14,15 @@ export default function MobileNavbar() {
         setIsOpen((isOpen) => !isOpen);
     }
 
-    let navbarElement = <></>;
-    if (isOpen) {
-        navbarElement = (
-            <nav className={styles.navbarContainer}>
+    let navbarClasses = styles.navbarContainer;
+    if (!isOpen) {
+        navbarClasses += ` ${styles.dontShow}`;
+    }
+
+    return (
+        <div className={styles.wholeNavbarContainer}>
+            <MobileNavbarHeader isOpen={isOpen} triggerNavbar={triggerNavbar} />
+            <nav className={navbarClasses}>
                 <Link
                     href="#about-me"
                     className={
@@ -50,13 +55,6 @@ export default function MobileNavbar() {
                 </Link>
                 <Link href="blog">Blog</Link>
             </nav>
-        );
-    }
-
-    return (
-        <div className={styles.wholeNavbarContainer}>
-            <MobileNavbarHeader isOpen={isOpen} triggerNavbar={triggerNavbar} />
-            {navbarElement}
         </div>
     );
 }
