@@ -35,7 +35,7 @@ export default function ProjectPage() {
                         "Contains user management (with JWT), posting, commenting, replies to comments (nested comments), post categories, infinite scroll, and responsive design.",
                     ]}
                     githubLink="https://github.com/Mitch281/django-react-reddit-clone"
-                    websiteLink="threddit.netlify.app"
+                    websiteLink="https://threddit.netlify.app"
                 />
                 <div className={styles.projectContainerWithDemo}>
                     <Project
