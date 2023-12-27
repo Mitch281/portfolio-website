@@ -10,7 +10,7 @@ export default function Navbar() {
     const { pageHighlightedOnNavbar } = useContext(NavbarContext);
 
     return (
-        <div className={styles.container}>
+        <nav className={styles.container}>
             <Avatar />
             <Link
                 href="#about-me"
@@ -43,6 +43,6 @@ export default function Navbar() {
                 Projects
             </Link>
             <Link href="blog">Blog</Link>
-        </div>
+        </nav>
     );
 }

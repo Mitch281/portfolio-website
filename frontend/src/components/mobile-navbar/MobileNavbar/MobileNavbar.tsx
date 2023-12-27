@@ -17,7 +17,7 @@ export default function MobileNavbar() {
     let navbarElement = <></>;
     if (isOpen) {
         navbarElement = (
-            <div className={styles.navbarContainer}>
+            <nav className={styles.navbarContainer}>
                 <Link
                     href="#about-me"
                     className={
@@ -49,7 +49,7 @@ export default function MobileNavbar() {
                     Projects
                 </Link>
                 <Link href="blog">Blog</Link>
-            </div>
+            </nav>
         );
     }
 
