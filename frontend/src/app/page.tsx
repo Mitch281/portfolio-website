@@ -1,7 +1,7 @@
 "use client";
 
 import AboutMe from "@/components/AboutMe/AboutMe";
-import MobileNavbar from "@/components/navbar/MobileNavbar/MobileNavbar";
+import MobileNavbar from "@/components/mobile-navbar/MobileNavbar/MobileNavbar";
 import Navbar from "@/components/navbar/Navbar/Navbar";
 import ProjectPage from "@/components/project-page/ProjectPage/ProjectPage";
 import Skills from "@/components/skill-page/Skills/Skills";
@@ -13,9 +13,7 @@ export default function Home() {
     const windowWidth = useHandleWindowResize();
     let navbarElement = <></>;
 
-    if (!windowWidth) {
-        navbarElement = <Navbar />;
-    } else if (windowWidth <= TABLET_BREAKPOINT) {
+    if (windowWidth <= TABLET_BREAKPOINT) {
         navbarElement = <MobileNavbar />;
     } else {
         navbarElement = <Navbar />;

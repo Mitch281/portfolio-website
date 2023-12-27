@@ -1,0 +1,15 @@
+.navbarHeader {
+    height: var(--navbar-header-height);
+    width: 100vw;
+    background-color: var(--navbar-colour);
+    z-index: 10;
+}
+
+.navbarIcon {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    right: 1rem;
+    height: 50px;
+}
