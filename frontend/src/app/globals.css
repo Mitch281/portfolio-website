@@ -31,6 +31,7 @@
   --card-border-rgb: 131, 134, 135;
 
   --navbar-width: 200px;
+  --tablet-breakpoint: 780px;
 }
 
 @media (prefers-color-scheme: dark) {

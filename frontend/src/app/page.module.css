@@ -4,6 +4,12 @@
   overflow: hidden;
 }
 
+@media (max-width: var(--tablet-breakpoint)) {
+  .main {
+    display: initial;
+  }
+}
+
 .pages {
   overflow-y: scroll;
   /* Make it take up rest of page. */
