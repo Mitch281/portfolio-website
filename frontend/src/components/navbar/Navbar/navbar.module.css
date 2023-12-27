@@ -1,3 +1,5 @@
+/* TODO: Fix issue where when navbar is opened, the navbar jumps to a certain point, then the animation begins. */
+
 .container {
     height: 100vh;
     display: flex;
@@ -9,8 +11,33 @@
     flex-shrink: 0;
     gap: 1rem;
     background: var(--navbar-colour);
+    position: relative;
+    transition: flex-basis 0.5s;
 }
 
 .inFocusLink {
     color: white;
+}
+
+.toggleNavbarButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.toggleNavbarButtonWithNavbarClosed {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+
+.dontShow {
+    flex-basis: 0;
+    width: 0;
+}
+
+.dontShow>*:not(#toggleNavbarButton) {
+    display: none;
 }

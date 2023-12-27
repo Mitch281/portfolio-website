@@ -2,15 +2,33 @@
 
 import { NavbarContext } from "@/context/NavbarContext";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import Avatar from "../Avatar/Avatar";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(true);
     const { pageHighlightedOnNavbar } = useContext(NavbarContext);
 
+    function toggleNavbar() {
+        setIsOpen((isOpen) => !isOpen);
+    }
+
+    let navbarClasses = styles.container;
+    let toggleNavbarButtonClasses = styles.toggleNavbarButton;
+    if (!isOpen) {
+        navbarClasses += ` ${styles.dontShow}`;
+        toggleNavbarButtonClasses = styles.toggleNavbarButtonWithNavbarClosed;
+    }
+
     return (
-        <nav className={styles.container}>
+        <nav className={navbarClasses}>
+            <RxHamburgerMenu
+                id={styles.toggleNavbarButton}
+                className={toggleNavbarButtonClasses}
+                onClick={toggleNavbar}
+            />
             <Avatar />
             <Link
                 href="#about-me"
