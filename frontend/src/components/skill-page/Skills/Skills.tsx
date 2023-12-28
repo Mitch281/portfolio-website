@@ -96,10 +96,12 @@ export default function Skills() {
 
     useEffect(() => {
         if (inView) {
-            setSkillCardsContainerClasses(`${styles.skillCardsContainer}`);
+            setSkillCardsContainerClasses(
+                `${styles.skillCardsContainer} ${styles.show}`
+            );
         } else {
             setSkillCardsContainerClasses(
-                `${styles.skillCardsContainer} ${styles.displayNone}`
+                `${styles.skillCardsContainer} ${styles.hide}`
             );
         }
     }, [inView]);

@@ -15,11 +15,15 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-evenly;
-    animation: fadeIn 1s;
 }
 
-.displayNone {
-    display: none;
+.show {
+    opacity: 1;
+    transition: opacity 1.5s ease-in;
+}
+
+.hide {
+    opacity: 0;
 }
 
 .skillCardContainer {
@@ -30,7 +34,7 @@
     background: white;
     border-radius: 1rem;
     width: 150px;
-    height: 150px;
+    height: 200px;
     padding: 1rem 0;
 }
 
