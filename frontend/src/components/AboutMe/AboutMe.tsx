@@ -16,9 +16,20 @@ export default function AboutMe() {
                 <span className={styles.lastName}>Anton</span>
             </h1>
             <h2 className={styles.jobTitle}>Software Developer</h2>
-            <p>
-                I am an enthusiastic software developer who solving problems
-                with programming.{" "}
+            <h3>
+                Melbourne, Australia -{" "}
+                <Link
+                    className={styles.emailLink}
+                    href="mailto:mitchella0100@gmail.com"
+                >
+                    mitchella0100@gmail.com
+                </Link>
+            </h3>
+            <p className={styles.aboutMeText}>
+                Hi there &#128075;. I am a software developer from Melbourne,
+                Australia. My main area of interest lies in web development,
+                where you'll find me building applications with React and
+                Django.
             </p>
             <div className={styles.socialsContainer}>
                 <Link

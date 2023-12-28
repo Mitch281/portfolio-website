@@ -15,10 +15,6 @@
     transition: flex-basis 0.5s;
 }
 
-.inFocusLink {
-    color: white;
-}
-
 .toggleNavbarButton {
     position: absolute;
     top: 1rem;

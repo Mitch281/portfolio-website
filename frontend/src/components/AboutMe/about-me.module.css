@@ -14,6 +14,16 @@
     margin-top: -0.8rem;
 }
 
+
+.emailLink {
+    color: blue;
+    text-decoration: underline;
+}
+
+.aboutMeText {
+    margin: 2rem 0;
+}
+
 .socialsContainer {
     display: flex;
     gap: 1rem;
