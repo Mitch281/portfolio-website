@@ -14,7 +14,7 @@ export default function BlogExcerpt({ blogPost }: Props) {
             <p>
                 <Link
                     className={styles.blogPostTitle}
-                    href={`blog/${blogPost.id}`}
+                    href={`blogs/${blogPost.id}`}
                 >
                     {blogPost.title}
                 </Link>

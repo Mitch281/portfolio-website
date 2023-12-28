@@ -53,7 +53,7 @@ export default function MobileNavbar() {
                 >
                     Projects
                 </Link>
-                <Link href="blog">Blog</Link>
+                <Link href="blogs">Blog</Link>
             </nav>
         </div>
     );
