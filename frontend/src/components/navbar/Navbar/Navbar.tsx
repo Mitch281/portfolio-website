@@ -61,7 +61,7 @@ export default function Navbar() {
                 Projects
             </Link>
             <Link
-                href="blogs"
+                href="/blogs"
                 className={
                     pageHighlightedOnNavbar === "Blog" ? styles.inFocusLink : ""
                 }

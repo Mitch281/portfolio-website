@@ -1,14 +1,13 @@
 import { BlogPost } from "@/types";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import styles from "./blog-excerpt.module.css";
+import styles from "./full-blog-post.module.css";
 
 type Props = {
     blogPost: BlogPost;
 };
 
-export default function BlogExcerpt({ blogPost }: Props) {
-    const blogPostPreview = blogPost.article.slice(0, 200);
+export default function FullBlogPost({ blogPost }: Props) {
     return (
         <div>
             <p>
@@ -22,9 +21,9 @@ export default function BlogExcerpt({ blogPost }: Props) {
             <span className={styles.dateCreatedText}>
                 Date Created: {blogPost.date_created.slice(0, 10)}
             </span>
-            <Markdown className={styles.article}>{blogPostPreview}</Markdown>
-            <Link className={styles.keepReading} href={`blogs/${blogPost.id}`}>
-                Keep Reading
+            <Markdown className={styles.article}>{blogPost.article}</Markdown>
+            <Link className={styles.backToBlogLink} href="/blogs">
+                Back to blog
             </Link>
         </div>
     );

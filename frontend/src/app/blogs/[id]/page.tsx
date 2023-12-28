@@ -1,6 +1,6 @@
 import PageLayout from "@/components/PageLayout/PageLayout";
 import ScreenLayout from "@/components/ScreenLayout/ScreenLayout";
-import BlogExcerpt from "@/components/blog/BlogExcerpt/BlogExcerpt";
+import FullBlogPost from "@/components/blog/FullBlogPost/FullBlogPost";
 import { BlogPost } from "@/types";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: Params }) {
     return (
         <ScreenLayout>
             <PageLayout>
-                <BlogExcerpt blogPost={blogPost} />
+                <FullBlogPost blogPost={blogPost} />
             </PageLayout>
         </ScreenLayout>
     );
