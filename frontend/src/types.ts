@@ -7,3 +7,11 @@ export type NavbarContextType = {
     setPagesInView: React.Dispatch<SetStateAction<NavbarLink[]>>;
     pageHighlightedOnNavbar: NavbarLink;
 };
+
+export type BlogPost = {
+    id: number;
+    title: string;
+    article: string;
+    date_created: string;
+    date_updated: string;
+};

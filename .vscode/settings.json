@@ -6,5 +6,8 @@
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
