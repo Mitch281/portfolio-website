@@ -3,6 +3,7 @@
 import AboutMe from "@/components/AboutMe/AboutMe";
 import PageLayout from "@/components/PageLayout/PageLayout";
 import ScreenLayout from "@/components/ScreenLayout/ScreenLayout";
+import BlogPagePreview from "@/components/blog/BlogPagePreview/BlogPagePreview";
 import ProjectPage from "@/components/project-page/ProjectPage/ProjectPage";
 import Skills from "@/components/skill-page/Skills/Skills";
 import styles from "./page.module.css";
@@ -18,6 +19,9 @@ export default function Home() {
             </PageLayout>
             <PageLayout>
                 <ProjectPage />
+            </PageLayout>
+            <PageLayout>
+                <BlogPagePreview />
             </PageLayout>
         </ScreenLayout>
     );

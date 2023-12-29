@@ -2,7 +2,6 @@
     width: 80%;
     aspect-ratio: 1 / 1;
     border-radius: calc((0.8 * var(--navbar-width)) / 2);
-    background: blue;
     display: flex;
     align-items: center;
     justify-content: center;

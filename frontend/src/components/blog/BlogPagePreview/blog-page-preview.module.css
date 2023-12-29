@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+    margin: auto;
+}
+
+.goToBlogsLink {
+    font-size: 4rem;
+    color: blue;
+    transition: font-size 1s;
+}
+
+.goToBlogsLink:hover {
+    font-size: 6rem;
+}
