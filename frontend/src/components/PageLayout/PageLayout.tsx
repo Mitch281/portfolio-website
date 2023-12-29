@@ -6,7 +6,6 @@ type Props = {
 };
 
 export default function PageLayout({ children, extraClasses }: Props) {
-    console.log(extraClasses);
     let classes = styles.page;
     if (extraClasses) {
         const extraClassesString = extraClasses.join(", ");

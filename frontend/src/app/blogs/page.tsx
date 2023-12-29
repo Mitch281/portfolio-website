@@ -8,7 +8,6 @@ const API_BASE_PATH = process.env.API_BASE_PATH;
 async function fetchAllBlogPosts(): Promise<BlogPost[]> {
     const response = await fetch(`${API_BASE_PATH}/blogs`);
     if (!response.ok) {
-        console.log(response.statusText);
         throw new Error(response.statusText);
     }
     const json: BlogPost[] = await response.json();

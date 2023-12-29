@@ -1,5 +1,6 @@
 "use client";
 
+import ErrorPage from "@/components/ErrorPage/ErrorPage";
 import PageLayout from "@/components/PageLayout/PageLayout";
 import ScreenLayout from "@/components/ScreenLayout/ScreenLayout";
 
@@ -12,8 +13,7 @@ const error = ({ error, reset }: Props) => {
     return (
         <ScreenLayout>
             <PageLayout>
-                <h2>{error.message}</h2>
-                <button onClick={() => reset()}>Try again</button>
+                <ErrorPage errorMessage={error.message} reset={reset} />
             </PageLayout>
         </ScreenLayout>
     );
