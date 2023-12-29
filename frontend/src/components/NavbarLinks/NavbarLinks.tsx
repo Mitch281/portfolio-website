@@ -15,7 +15,7 @@ export default function NavbarLinks() {
                 className={
                     pageHighlightedOnNavbar === "About Me"
                         ? styles.inFocusLink
-                        : ""
+                        : styles.link
                 }
             >
                 About Me
@@ -25,7 +25,7 @@ export default function NavbarLinks() {
                 className={
                     pageHighlightedOnNavbar === "Skills"
                         ? styles.inFocusLink
-                        : ""
+                        : styles.link
                 }
             >
                 Skills
@@ -35,7 +35,7 @@ export default function NavbarLinks() {
                 className={
                     pageHighlightedOnNavbar === "Projects"
                         ? styles.inFocusLink
-                        : ""
+                        : styles.link
                 }
             >
                 Projects
@@ -43,7 +43,9 @@ export default function NavbarLinks() {
             <Link
                 href="/blogs"
                 className={
-                    pageHighlightedOnNavbar === "Blog" ? styles.inFocusLink : ""
+                    pageHighlightedOnNavbar === "Blog"
+                        ? styles.inFocusLink
+                        : styles.link
                 }
             >
                 Blog

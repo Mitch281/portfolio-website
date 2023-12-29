@@ -7,7 +7,7 @@
 }
 
 .lastName {
-    color: #C2E812;
+    color: var(--last-name-colour);
 }
 
 .jobTitle {
