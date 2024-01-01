@@ -28,7 +28,7 @@ export default function AboutMe() {
             <p className={styles.aboutMeText}>
                 Hi there &#128075;. I am a software developer from Melbourne,
                 Australia. My main area of interest lies in web development,
-                where you'll find me building applications with React and
+                where you&apos;ll find me building applications with React and
                 Django.
             </p>
             <div className={styles.socialsContainer}>

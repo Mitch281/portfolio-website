@@ -48,7 +48,7 @@ function NavbarContextProvider({ children }: { children: React.ReactNode }) {
             return;
         }
         setPageHighlightedOnNavbar(newPageHighlightedOnNavbar);
-    }, [pagesInView]);
+    }, [pagesInView, pathname]);
 
     return (
         <NavbarContext.Provider

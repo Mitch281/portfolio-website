@@ -8,6 +8,7 @@ export default function useSetNavbarLinkInFocus(pageName: NavbarLink) {
     const { pagesInView, setPagesInView } = useContext(NavbarContext);
 
     useEffect(() => {
+        console.log("made it");
         if (inView) {
             if (!pagesInView.includes(pageName)) {
                 setPagesInView((pagesInView) => [...pagesInView, pageName]);
@@ -19,9 +20,8 @@ export default function useSetNavbarLinkInFocus(pageName: NavbarLink) {
                 );
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [inView]);
-
-    useEffect(() => {}, [pagesInView]);
 
     return { ref, inView };
 }
