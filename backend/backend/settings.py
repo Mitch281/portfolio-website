@@ -33,7 +33,11 @@ if IS_PRODUCTION == "True":
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "ec2-13-239-34-160.ap-southeast-2.compute.amazonaws.com",
+]
 
 CORS_ORIGIN_WHITELIST = ["http://localhost:3000"]
 
