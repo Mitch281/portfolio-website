@@ -1,5 +1,7 @@
 import connect from "@/db/connect";
 import { BlogPost } from "@/types";
+import isProd from "@/utils/is-prod";
+import { sql } from "@vercel/postgres";
 
 type Context = {
     params: { id: number };
@@ -7,14 +9,17 @@ type Context = {
 
 export async function GET(request: Request, context: Context) {
     const blogId = context.params.id;
-    const pool = await connect();
-    const blogQuery = await pool.query(
-        `select * from Blogs where id = ${blogId}`
-    );
-    const blogPosts: BlogPost[] = blogQuery.rows;
+    let query;
+    if (isProd()) {
+        query = await sql`select * from Blogs where id = ${blogId}`;
+    } else {
+        const pool = await connect();
+        query = await pool.query(`select * from Blogs where id = ${blogId}`);
+        await pool.end();
+    }
+    const blogPosts: BlogPost[] = query.rows;
     if (blogPosts.length === 0) {
         return Response.json({ status: 404 });
     }
-    await pool.end();
     return Response.json(blogPosts[0]);
 }
