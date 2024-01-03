@@ -1,14 +1,14 @@
 import isProd from "@/utils/is-prod";
-import { Client } from "pg";
+import { Pool } from "pg";
 
 async function connect() {
-    let client: Client | null = null;
+    let pool: Pool | null = null;
     if (isProd()) {
-        client = new Client({
+        pool = new Pool({
             connectionString: process.env.POSTGRES_URL + "?sslmode=require",
         });
     } else {
-        client = new Client({
+        pool = new Pool({
             user: process.env.DB_USER,
             host: process.env.DB_HOST,
             database: process.env.DB_NAME,
@@ -17,9 +17,9 @@ async function connect() {
         });
     }
 
-    await client.connect();
+    await pool.connect();
 
-    return client;
+    return pool;
 }
 
 export default connect;

@@ -7,14 +7,14 @@ type Context = {
 
 export async function GET(request: Request, context: Context) {
     const blogId = context.params.id;
-    const client = await connect();
-    const blogQuery = await client.query(
+    const pool = await connect();
+    const blogQuery = await pool.query(
         `select * from Blogs where id = ${blogId}`
     );
     const blogPosts: BlogPost[] = blogQuery.rows;
     if (blogPosts.length === 0) {
         return Response.json({ status: 404 });
     }
-    await client.end();
+    await pool.end();
     return Response.json(blogPosts[0]);
 }
