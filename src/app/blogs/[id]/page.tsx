@@ -1,15 +1,13 @@
 import PageLayout from "@/components/PageLayout/PageLayout";
 import ScreenLayout from "@/components/ScreenLayout/ScreenLayout";
 import FullBlogPost from "@/components/blog/FullBlogPost/FullBlogPost";
+import fetchBlogById from "@/db/fetch-blog-by-id";
 import { BlogPost } from "@/types";
-import getApiBasePath from "@/utils/get-api-base-path";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
-const API_BASE_PATH = getApiBasePath();
-
-async function fetchBlogPostById(id: number): Promise<BlogPost> {
+async function invokeFetchBlogPostById(id: number): Promise<BlogPost> {
     try {
-        const blogPost = await fetchBlogPostById(id);
+        const blogPost = await fetchBlogById(id);
         return blogPost;
     } catch (error) {
         throw new Error("Could not fetch blog post.");
@@ -17,7 +15,7 @@ async function fetchBlogPostById(id: number): Promise<BlogPost> {
 }
 
 export default async function Page({ params }: { params: Params }) {
-    const blogPost = await fetchBlogPostById(params.id);
+    const blogPost = await invokeFetchBlogPostById(params.id);
     return (
         <ScreenLayout>
             <PageLayout>
