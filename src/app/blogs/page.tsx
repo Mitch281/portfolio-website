@@ -5,7 +5,7 @@ import { BlogPost } from "@/types";
 import getApiBasePath from "@/utils/get-api-base-path";
 
 const API_BASE_PATH = getApiBasePath();
-let error = null;
+let error: any = null;
 
 async function fetchAllBlogPosts(): Promise<BlogPost[]> {
     const response = await fetch(`${API_BASE_PATH}/blogs`);
