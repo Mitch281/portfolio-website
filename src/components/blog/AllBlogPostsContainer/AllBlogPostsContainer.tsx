@@ -4,9 +4,11 @@ import styles from "./all-blog-posts-container.module.css";
 
 type Props = {
     blogPosts: BlogPost[];
+    error?: any;
 };
 
-export default function AllBlogPostsContainer({ blogPosts }: Props) {
+export default function AllBlogPostsContainer({ blogPosts, error }: Props) {
+    console.log(error);
     let blogPostsElements: React.ReactNode = <></>;
     if (blogPosts.length === 0) {
         blogPostsElements = (
