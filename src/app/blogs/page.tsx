@@ -19,7 +19,7 @@ export default async function Page() {
     return (
         <ScreenLayout>
             <PageLayout>
-                <AllBlogPostsContainer blogPosts={allBlogs} error={error} />
+                <AllBlogPostsContainer blogPosts={allBlogs} />
             </PageLayout>
         </ScreenLayout>
     );
