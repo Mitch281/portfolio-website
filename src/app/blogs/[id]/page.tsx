@@ -8,12 +8,12 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 const API_BASE_PATH = getApiBasePath();
 
 async function fetchBlogPostById(id: number): Promise<BlogPost> {
-    const response = await fetch(`${API_BASE_PATH}/blogs/${id}`);
-    if (!response.ok) {
-        throw new Error(response.statusText);
+    try {
+        const blogPost = await fetchBlogPostById(id);
+        return blogPost;
+    } catch (error) {
+        throw new Error("Could not fetch blog post.");
     }
-    const json: BlogPost = await response.json();
-    return json;
 }
 
 export default async function Page({ params }: { params: Params }) {

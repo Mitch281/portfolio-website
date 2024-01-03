@@ -1,9 +1,9 @@
-import connect from "@/db/connect";
 import { BlogPost } from "@/types";
 import isProd from "@/utils/is-prod";
 import { sql } from "@vercel/postgres";
+import connect from "./connect";
 
-export async function GET() {
+export default async function fetchAllBlogs() {
     let query;
     if (isProd()) {
         query = await sql`select * from blogs`;
@@ -13,5 +13,5 @@ export async function GET() {
         await pool.end();
     }
     const blogPosts: BlogPost[] = query.rows;
-    return Response.json(blogPosts);
+    return blogPosts;
 }

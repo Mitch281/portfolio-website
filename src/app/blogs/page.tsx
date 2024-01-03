@@ -8,22 +8,16 @@ const API_BASE_PATH = getApiBasePath();
 let error: any = null;
 
 async function fetchAllBlogPosts(): Promise<BlogPost[]> {
-    const response = await fetch(`${API_BASE_PATH}/blogs`);
-    if (!response.ok) {
-        error = response;
-        throw new Error(response.statusText);
+    try {
+        const allBlogPosts = await fetchAllBlogPosts();
+        return allBlogPosts;
+    } catch (error) {
+        throw new Error("Could not fetch blog posts.");
     }
-    const json: BlogPost[] = await response.json();
-    return json;
 }
 
 export default async function Page() {
-    let allBlogs: BlogPost[] = [];
-    try {
-        allBlogs = await fetchAllBlogPosts();
-    } catch (error) {
-        return <></>;
-    }
+    const allBlogs = await fetchAllBlogPosts();
 
     return (
         <ScreenLayout>
