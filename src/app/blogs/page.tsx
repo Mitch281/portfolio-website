@@ -16,7 +16,12 @@ async function fetchAllBlogPosts(): Promise<BlogPost[]> {
 }
 
 export default async function Page() {
-    const allBlogs = await fetchAllBlogPosts();
+    let allBlogs: BlogPost[] = [];
+    try {
+        allBlogs = await fetchAllBlogPosts();
+    } catch (error) {
+        return <></>;
+    }
 
     return (
         <ScreenLayout>
