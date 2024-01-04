@@ -12,5 +12,5 @@ export type BlogPost = {
     id: number;
     title: string;
     article: string;
-    date_created: string;
+    date_created: Date;
 };

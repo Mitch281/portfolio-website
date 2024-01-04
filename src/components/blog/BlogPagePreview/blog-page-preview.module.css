@@ -9,9 +9,8 @@
 .goToBlogsLink {
     font-size: 4rem;
     color: blue;
-    transition: font-size 1s;
 }
 
 .goToBlogsLink:hover {
-    font-size: 6rem;
+    text-decoration: underline;
 }

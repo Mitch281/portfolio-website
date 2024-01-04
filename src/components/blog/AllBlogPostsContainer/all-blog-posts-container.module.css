@@ -3,3 +3,9 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+@media (max-width: 468px) {
+    .allBlogPostsContainer {
+        margin-top: 80px;
+    }
+}

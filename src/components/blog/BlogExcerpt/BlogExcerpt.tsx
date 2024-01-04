@@ -20,7 +20,7 @@ export default function BlogExcerpt({ blogPost }: Props) {
                 </Link>
             </p>
             <span className={styles.dateCreatedText}>
-                Date Created: {blogPost.date_created.slice(0, 10)}
+                Date Created: {blogPost.date_created.toString().slice(0, 10)}
             </span>
             <Markdown className={styles.article}>{blogPostPreview}</Markdown>
             <Link className={styles.keepReading} href={`blogs/${blogPost.id}`}>

@@ -32,6 +32,7 @@
 
   --last-name-colour: #C2E812;
   --navbar-width: 200px;
+  --mobile-breakpoint: 468px;
   --tablet-breakpoint: 780px;
   --navbar-colour: rgb(33, 33, 33);
   --navbar-header-height: 50px;
@@ -74,6 +75,7 @@
 
     --last-name-colour: #C2E812;
     --navbar-width: 200px;
+    --mobile-breakpoint: 468px;
     --tablet-breakpoint: 780px;
     --navbar-colour: rgb(33, 33, 33);
     --navbar-header-height: 50px;

@@ -8,9 +8,9 @@ export default async function fetchAllBlogs() {
     if (isProd()) {
         query = await sql`select * from blogs`;
     } else {
-        const pool = await connect();
-        query = await pool.query("select * from blogs");
-        await pool.end();
+        const client = await connect();
+        query = await client.query("select * from blogs");
+        await client.end();
     }
     const blogPosts: BlogPost[] = query.rows;
     return blogPosts;
