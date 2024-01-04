@@ -17,8 +17,17 @@
 }
 
 .gifContainer {
-    width: 475px;
-    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 468px) {
+    .gifContainer {
+        /* So that width 100% makes sense. Otheriwse, we would be doing 100% of a non-existent width. */
+        width: 475px;
+        /* So that "fill" prop works (which is essentially width 100% and height 100%) on Image element. */
+        position: relative;
+    }
 }
 
 .conwaysGameOfLifeGifContainer {

@@ -1,12 +1,49 @@
 "use client";
 
+import useHandleWindowResize from "@/hooks/useHandleWindowResize";
 import useSetNavbarLinkInFocus from "@/hooks/useSetNavbarLinkInFocus";
+import { MOBILE_BREAKPOINT } from "@/utils/constants";
 import Image from "next/image";
 import Project from "../Project/Project";
 import styles from "./project-page.module.css";
 
+type Dimension = {
+    width?: number;
+    height?: number;
+};
+
+type GifSizingProps = {
+    width?: number;
+    height?: number;
+    fill?: boolean;
+};
+
 export default function ProjectPage() {
     const { ref } = useSetNavbarLinkInFocus("Projects");
+    const windowWidth = useHandleWindowResize();
+
+    const conwaysGameOfLifeGifDimensions: Dimension = {};
+    const sudokuGifDimensions: Dimension = {};
+    let conwaysGameOfLifeGifSizing: GifSizingProps = {};
+    let sudokuGifSizing: GifSizingProps = {};
+    if (windowWidth && windowWidth <= MOBILE_BREAKPOINT) {
+        conwaysGameOfLifeGifDimensions.width = windowWidth * 0.8;
+        sudokuGifDimensions.width = windowWidth * 0.8;
+
+        conwaysGameOfLifeGifDimensions.height =
+            conwaysGameOfLifeGifDimensions.width * 0.73;
+        sudokuGifDimensions.height = sudokuGifDimensions.width;
+
+        conwaysGameOfLifeGifSizing = {
+            ...conwaysGameOfLifeGifDimensions,
+            fill: false,
+        };
+        sudokuGifSizing = { ...sudokuGifDimensions, fill: false };
+    } else {
+        conwaysGameOfLifeGifSizing.fill = true;
+        sudokuGifSizing.fill = true;
+    }
+
     return (
         <div id="projects" ref={ref} className={styles.container}>
             <h1>Projects</h1>
@@ -56,7 +93,7 @@ export default function ProjectPage() {
                         <Image
                             src="/conways-game-of-life.gif"
                             alt="Conways Game of Life Demo"
-                            fill
+                            {...conwaysGameOfLifeGifSizing}
                         />
                     </div>
                 </div>
@@ -74,7 +111,11 @@ export default function ProjectPage() {
                     <div
                         className={`${styles.gifContainer} ${styles.sudokuGifContainer}`}
                     >
-                        <Image src="/sudoku.gif" alt="Sudoku Demo" fill />
+                        <Image
+                            src="/sudoku.gif"
+                            alt="Sudoku Demo"
+                            {...sudokuGifSizing}
+                        />
                     </div>
                 </div>
             </div>
