@@ -20,9 +20,17 @@ export default function Navbar() {
         toggleNavbarButtonClasses = styles.toggleNavbarButtonWithNavbarClosed;
     }
 
+    let hamburgerMenuColor: "white" | "black" | null = null;
+    if (isOpen) {
+        hamburgerMenuColor = "white";
+    } else {
+        hamburgerMenuColor = "black";
+    }
+
     return (
         <nav className={navbarClasses}>
             <RxHamburgerMenu
+                color={hamburgerMenuColor}
                 id={styles.toggleNavbarButton}
                 className={toggleNavbarButtonClasses}
                 onClick={toggleNavbar}
