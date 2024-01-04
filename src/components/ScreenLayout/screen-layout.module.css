@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 
-@media (max-width: var(--tablet-breakpoint)) {
+@media (max-width: 780px) {
     .main {
         display: initial;
     }

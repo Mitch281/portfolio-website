@@ -11,6 +11,12 @@
     color: blue;
 }
 
+@media (max-width: 468px) {
+    .goToBlogsLink {
+        font-size: 3rem;
+    }
+}
+
 .goToBlogsLink:hover {
     text-decoration: underline;
 }
