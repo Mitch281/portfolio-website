@@ -24,6 +24,8 @@
 
 .dontShow {
     max-height: 0;
+    /* The overflow hidden here ensures that when we open the navbar, the links inside the navbar do not show before the animation 
+    has caught up. */
     overflow: hidden;
     padding-bottom: 0;
 }
