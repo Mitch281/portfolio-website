@@ -36,7 +36,7 @@ export default function Navbar() {
                 onClick={toggleNavbar}
             />
             <Avatar />
-            <NavbarLinks />
+            <NavbarLinks isMobile={false} />
         </nav>
     );
 }

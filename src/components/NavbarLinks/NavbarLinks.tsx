@@ -2,11 +2,23 @@
 
 import { NavbarContext } from "@/context/NavbarContext";
 import Link from "next/link";
-import { useContext } from "react";
+import { MouseEventHandler, useContext } from "react";
 import styles from "./navbar-links.module.css";
 
-export default function NavbarLinks() {
+type Props = {
+    isMobile: boolean;
+    toggleNavbar?: Function;
+};
+
+export default function NavbarLinks({ isMobile, toggleNavbar }: Props) {
     const { pageHighlightedOnNavbar } = useContext(NavbarContext);
+    let onClickHandler: MouseEventHandler<HTMLAnchorElement> = () => {};
+
+    if (isMobile) {
+        // We will always pass this closeNavbar function if it is mobile.
+        onClickHandler = (e: React.MouseEvent<HTMLAnchorElement>) =>
+            (toggleNavbar as Function)();
+    }
 
     return (
         <ul className={styles.navList}>
@@ -17,6 +29,9 @@ export default function NavbarLinks() {
                         pageHighlightedOnNavbar === "About Me"
                             ? styles.inFocusLink
                             : styles.link
+                    }
+                    onClick={
+                        onClickHandler as MouseEventHandler<HTMLAnchorElement>
                     }
                 >
                     About Me
@@ -30,6 +45,9 @@ export default function NavbarLinks() {
                             ? styles.inFocusLink
                             : styles.link
                     }
+                    onClick={
+                        onClickHandler as MouseEventHandler<HTMLAnchorElement>
+                    }
                 >
                     Skills
                 </Link>
@@ -42,6 +60,9 @@ export default function NavbarLinks() {
                             ? styles.inFocusLink
                             : styles.link
                     }
+                    onClick={
+                        onClickHandler as MouseEventHandler<HTMLAnchorElement>
+                    }
                 >
                     Projects
                 </Link>
@@ -53,6 +74,9 @@ export default function NavbarLinks() {
                         pageHighlightedOnNavbar === "Blog"
                             ? styles.inFocusLink
                             : styles.link
+                    }
+                    onClick={
+                        onClickHandler as MouseEventHandler<HTMLAnchorElement>
                     }
                 >
                     Blog

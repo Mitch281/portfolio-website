@@ -8,7 +8,7 @@ import styles from "./mobile-navbar.module.css";
 export default function MobileNavbar() {
     const [isOpen, setIsOpen] = useState(false);
 
-    function triggerNavbar() {
+    function toggleNavbar() {
         setIsOpen((isOpen) => !isOpen);
     }
 
@@ -19,9 +19,9 @@ export default function MobileNavbar() {
 
     return (
         <div className={styles.wholeNavbarContainer}>
-            <MobileNavbarHeader isOpen={isOpen} triggerNavbar={triggerNavbar} />
+            <MobileNavbarHeader isOpen={isOpen} toggleNavbar={toggleNavbar} />
             <nav className={navbarClasses}>
-                <NavbarLinks />
+                <NavbarLinks isMobile={true} toggleNavbar={toggleNavbar} />
             </nav>
         </div>
     );

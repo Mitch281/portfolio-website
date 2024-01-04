@@ -6,17 +6,17 @@ import styles from "./mobile-navbar-header.module.css";
 
 type Props = {
     isOpen: boolean;
-    triggerNavbar: () => void;
+    toggleNavbar: () => void;
 };
 
-export default function MobileNavbarHeader({ isOpen, triggerNavbar }: Props) {
+export default function MobileNavbarHeader({ isOpen, toggleNavbar }: Props) {
     let navbarIcon = <></>;
     if (!isOpen) {
         navbarIcon = (
             <RxHamburgerMenu
                 color="white"
                 className={styles.navbarIcon}
-                onClick={triggerNavbar}
+                onClick={toggleNavbar}
             />
         );
     } else {
@@ -24,7 +24,7 @@ export default function MobileNavbarHeader({ isOpen, triggerNavbar }: Props) {
             <AiOutlineClose
                 color="white"
                 className={styles.navbarIcon}
-                onClick={triggerNavbar}
+                onClick={toggleNavbar}
             />
         );
     }
