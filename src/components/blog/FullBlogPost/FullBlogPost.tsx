@@ -19,7 +19,7 @@ export default function FullBlogPost({ blogPost }: Props) {
                 </Link>
             </p>
             <span className={styles.dateCreatedText}>
-                Date Created: {blogPost.date_created.slice(0, 10)}
+                Date Created: {blogPost.date_created.toString().slice(0, 10)}
             </span>
             <Markdown className={styles.article}>{blogPost.article}</Markdown>
             <Link className={styles.backToBlogLink} href="/blogs">
