@@ -5,3 +5,21 @@
 .inFocusLink {
     color: var(--navbar-in-focus-link-colour);
 }
+
+.navList {
+    list-style-type: none;
+}
+
+.navList>li:not(:first-child) {
+    margin-top: 1rem;
+}
+
+/* We do this because of our mobile navbar open animation. If we apply the padding bottom to the nav element, then once we close
+the navbar, we set the .dontShow class in mobile-navbar.module.css, which applies 0 padding bottom to the nav (before I found this
+fix). The problem with this is that this applies as the animation starts, making it clunky. So instead, we apply our padding-bottom
+to the last link in the navbar. */
+@media (max-width: 468px) {
+    .navList:last-child {
+        padding-bottom: 1rem;
+    }
+}
