@@ -13,69 +13,31 @@ type Skill = {
 
 const SKILLS: Skill[] = [
     {
-        imageComponent: (
-            <Image
-                className={styles.image}
-                src="/react-icon.svg"
-                alt="React Icon"
-                fill
-            />
-        ),
+        imageComponent: <Image src="/react-icon.svg" alt="React Icon" fill />,
         imageDescription: "React",
     },
     {
-        imageComponent: (
-            <Image
-                className={styles.image}
-                src="/redux-logo.svg"
-                alt="Redux Logo"
-                fill
-            />
-        ),
+        imageComponent: <Image src="/redux-logo.svg" alt="Redux Logo" fill />,
         imageDescription: "Redux",
     },
     {
         imageComponent: (
-            <Image
-                className={styles.image}
-                src="/javascript-logo.svg"
-                alt="JavaScript Logo"
-                fill
-            />
+            <Image src="/javascript-logo.svg" alt="JavaScript Logo" fill />
         ),
         imageDescription: "JavaScript",
     },
     {
         imageComponent: (
-            <Image
-                className={styles.image}
-                src="/typescript-logo.svg"
-                alt="TypeScript Logo"
-                fill
-            />
+            <Image src="/typescript-logo.svg" alt="TypeScript Logo" fill />
         ),
         imageDescription: "TypeScript",
     },
     {
-        imageComponent: (
-            <Image
-                className={styles.image}
-                src="/python-logo.svg"
-                alt="Python Logo"
-                fill
-            />
-        ),
+        imageComponent: <Image src="/python-logo.svg" alt="Python Logo" fill />,
         imageDescription: "Python",
     },
     {
-        imageComponent: (
-            <Image
-                className={styles.image}
-                src="/django-logo.svg"
-                alt="Django Logo"
-                fill
-            />
-        ),
+        imageComponent: <Image src="/django-logo.svg" alt="Django Logo" fill />,
         imageDescription: "Django",
     },
 ];
