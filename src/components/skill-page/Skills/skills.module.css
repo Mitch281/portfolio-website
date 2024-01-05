@@ -39,7 +39,7 @@
     padding: 1rem 0;
 }
 
-.animationContainer {
+.borderBottomAnimationContainer {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -47,10 +47,11 @@
     height: 100%;
     border-bottom: 2px solid black;
     border-bottom-left-radius: 1rem;
+    animation-direction: reverse;
 }
 
-.skillCardContainer:hover>.animationContainer {
-    animation: borderbottom 1s forwards;
+.skillCardContainer:hover>.borderBottomAnimationContainer {
+    animation: borderbottom 0.8s forwards;
 }
 
 @keyframes borderbottom {
@@ -74,6 +75,21 @@
         width: 100%;
         border-bottom-right-radius: 1rem;
     }
+}
+
+.backgroundAnimationContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: var(--skill-card-background-colour-after-animation);
+    transition: 0.8s width ease-in;
+    border-radius: 1rem;
+}
+
+.skillCardContainer:hover>.backgroundAnimationContainer {
+    width: 100%;
 }
 
 .imageDescription {

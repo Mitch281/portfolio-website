@@ -30,6 +30,7 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
+  --skill-card-background-colour-after-animation: rgb(194, 232, 18, 0.65);
   --last-name-colour: #C2E812;
   --navbar-width: 200px;
   --mobile-breakpoint: 468px;
