@@ -27,6 +27,7 @@
 }
 
 .skillCardContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +37,43 @@
     width: 150px;
     height: 200px;
     padding: 1rem 0;
+}
+
+.animationContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 100%;
+    border-bottom: 2px solid black;
+    border-bottom-left-radius: 1rem;
+}
+
+.skillCardContainer:hover>.animationContainer {
+    animation: borderbottom 1s forwards;
+}
+
+@keyframes borderbottom {
+    0% {
+        width: 0px;
+    }
+
+    50% {
+        border-bottom-right-radius: 0;
+    }
+
+    80% {
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    90% {
+        border-bottom-right-radius: 0.75rem;
+    }
+
+    100% {
+        width: 100%;
+        border-bottom-right-radius: 1rem;
+    }
 }
 
 .imageDescription {

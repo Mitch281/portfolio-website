@@ -91,6 +91,7 @@ export default function Skills() {
             <span className={styles.imageDescription}>
                 {skill.imageDescription}
             </span>
+            <div className={styles.animationContainer}></div>
         </div>
     ));
 
