@@ -31,7 +31,7 @@
 
     .skillCardContainer {
         width: 200px;
-        aspect-ratio: 1 / 1.33;
+        height: 266px;
     }
 }
 
