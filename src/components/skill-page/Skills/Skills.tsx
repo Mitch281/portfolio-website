@@ -110,38 +110,35 @@ export default function Skills() {
 
     return (
         <div id="skills" className={styles.container} ref={ref}>
-            <h1>My main skills are</h1>
+            <h1>MY MAIN SKILLS ARE</h1>
             <div className={skillCardsContainerClasses}>{skillCards}</div>
             <h2>Other Skills</h2>
-            <div className={styles.otherSkillsContainer}>
-                <h3 className={styles.otherSkillsHeader}>
-                    Languages and Frameworks
-                </h3>
-                <ul>
-                    <li>Next</li>
-                    <li>Java</li>
-                    <li>PHP</li>
-                    <li>SQL</li>
-                    <li>Material UI</li>
-                </ul>
-                <h3 className={styles.otherSkillsHeader}>Cloud Providers</h3>
-                <ul>
-                    <li>
-                        AWS - Lambda, EC2, RDS, S3, CloudWatch, IAM, API
-                        Gateways
-                    </li>
-                </ul>
-                <h3 className={styles.otherSkillsHeader}>
-                    Other Tools and Concepts
-                </h3>
-                <ul>
-                    <li>CI/CD</li>
-                    <li>Github Actions</li>
-                    <li>Relational Databases</li>
-                    <li>Responsive Design</li>
-                    <li>JWT Authentication</li>
-                </ul>
-            </div>
+            <h3 className={styles.otherSkillsHeader}>
+                Languages and Frameworks
+            </h3>
+            <ul>
+                <li>Next</li>
+                <li>Java</li>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>Material UI</li>
+            </ul>
+            <h3 className={styles.otherSkillsHeader}>Cloud Providers</h3>
+            <ul>
+                <li>
+                    AWS - Lambda, EC2, RDS, S3, CloudWatch, IAM, API Gateways
+                </li>
+            </ul>
+            <h3 className={styles.otherSkillsHeader}>
+                Other Tools and Concepts
+            </h3>
+            <ul>
+                <li>CI/CD</li>
+                <li>Github Actions</li>
+                <li>Relational Databases</li>
+                <li>Responsive Design</li>
+                <li>JWT Authentication</li>
+            </ul>
         </div>
     );
 }
